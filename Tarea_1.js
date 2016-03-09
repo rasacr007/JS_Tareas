@@ -1,6 +1,10 @@
 
  
 /*******************************************************/
+/* Es año bisiesto                                     */
+//var year= new Year(2016);
+//year.isleap();
+/*******************************************************/
 
 var Year= function (year)
 {
@@ -20,11 +24,14 @@ return {
   };
 }
 
- //var year= new Year(2016);
- //year.isleap();
  
  
+
 /*******************************************************/
+/* Contador de palabras que hay entre espacios         */
+/*******************************************************/
+
+
 var Words  = function (){
   return  {
     count: function(word){
@@ -57,6 +64,15 @@ var Words  = function (){
  
  
 /*******************************************************/
+/* Funcion Hamming, cuantas letras diferiente para la 
+misma posicion dentro de 2 hileras                    */
+
+//var  result = new hamming("casa","casa");
+//result.compute("casa","saca")
+
+/******************************************************/
+
+
 var hamming  = function (){
   return  {
     compute: function(word1,word2){
@@ -84,6 +100,5 @@ var hamming  = function (){
   };
 }
  
-//var  result = new hamming("casa","casa");
-//result.compute("casa","saca")
+
  
