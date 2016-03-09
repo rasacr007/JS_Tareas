@@ -1,4 +1,11 @@
-/*******************************************************/
+
+
+//----------------------------------------------
+//Muestra la letra de la cancion "Beer Song"
+//var song= new BeerSong();
+//song.showSong(10);
+//----------------------------------------------
+
 var BeerSong =  function () {
 
   return {
@@ -49,11 +56,13 @@ var BeerSong =  function () {
   };
 };
 
-//var song= new BeerSong();
-//song.showSong(10);
-
-/*******************************************************/
-
+//----------------------------------------------
+//Calcula las areas
+//var calculate = new Areas();
+//calculate.square(4,4); // 16
+//calculate.circle(5); // 78.53
+//calculate.triangle(4,4); // 8
+//----------------------------------------------
 
 var Areas= function (){
   return {
@@ -68,9 +77,3 @@ var Areas= function (){
     }
   };
 };
-/*
-var calculate = new Areas();
-calculate.square(4,4); // 16
-calculate.circle(5); // 78.53
-calculate.triangle(4,4); // 8
-*/
