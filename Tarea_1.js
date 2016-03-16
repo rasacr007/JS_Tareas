@@ -25,7 +25,28 @@ return {
 }
 
  
+//===========================================================
+// Cantidad de palabras en uns string
+//===========================================================
  
+ 
+ var suma = function(){
+   return {
+	  count: function(texto){
+		        var arr = texto.split(' ');
+	         var obj = {};
+			
+		        arr.forEach(function(item) { 
+           		 if (obj.hasOwnProperty(item)){
+           			   obj[item] +=1;			
+           			} else{
+           			  obj[item]= 1;		
+           			};		
+       		 });
+		 return obj;
+	  }
+ };
+};
 
 //===========================================================
 // Contador de palabras que hay entre espacios         
