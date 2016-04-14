@@ -9,17 +9,19 @@
 
 
    <style>
-    tareaConcluida{
+    .tareaConcluida{
       text-decoration:  line-through;
+      color: red
    }
    </style>
    <script>
 
    $(document).ready(function(){
         agregarElementosEjercicio4();
-        //agregarElementos();
-         //contador();
-         //invertir();
+
+        agregarElementos();
+         contador();
+         invertir();
 
    });
 
@@ -28,6 +30,16 @@
      var campoTexto = $('#ejercicio4 [name=texto-item]')[0];
      var botonPantalla = $('#ejercicio4 [type=submit]');
      var listaPantalla = $('#ejercicio4_resultados');
+     var botonLimpiar=  $('#ejercicio4 [type=button]');
+
+
+     botonLimpiar.click(function(){
+       $.each($('#ejercicio4_resultados li'), function(i,val) {
+          val.remove();
+          });
+       });
+
+
 
      botonPantalla.click(function(evento){
        if (campoTexto.value == ""){
@@ -36,19 +48,26 @@
          evento.preventDefault();
        }
        else {
-          var nodoLista= listaPantalla.add('<li>'+campoTexto.value+'</li>');
+          var nodoLista= document.createElement('li');
+          nodoLista.innerHTML= campoTexto.value;
           listaPantalla.append(nodoLista);
-          nodoLista.click(function(){
-          //  nodoLista.style.text-decoration="line-through";
-                alert(this.innerHTML);
-           })
-          //listaPantalla.append( '<li>'+campoTexto.value+'</li>' );
           campoTexto.value ='';
           campoTexto.focus();
           evento.preventDefault();
+
+          listaPantalla.on('DOMNodeInserted', 'li', function(e) {
+                this.addEventListener("click",function(){
+                //this.click(function(){
+                    //if (this.className===""){
+                      this.className="tareaConcluida";
+                      //}
+                      //else {
+                      //  this.className=""
+                      //}
+                })
+        	});
         }
      })
-
    }
 
    function agregarElementos(){
@@ -97,9 +116,10 @@
   <!--Ejercicio numero 4 -->
 
     <form id="ejercicio4">
-      <p> lalal</p>
+
         <input type="text" name="texto-item" placeholder="Texto del nuevo item">
         <input type="submit" value="Agregar item ejercicio4">
+        <input type="button" value="Limpiar">
     </form>
     <ul id="ejercicio4_resultados">
     </ul>
@@ -124,12 +144,12 @@
 <!--Ejercicio numero 1 -->
 
 <ul class="lista-items">
-    <li>Item número 1</li>
-    <li>Item número 2</li>
-    <li>Item número 3</li>
-    <li>Item número 4</li>
-    <li>Item número 5</li>
-    <li>Item número 6</li>
+    <li>Item numero 1</li>
+    <li>Item numero 2</li>
+    <li>Item numero 3</li>
+    <li>Item numero 4</li>
+    <li>Item numero 5</li>
+    <li>Item numero 6</li>
 </ul>
 
 <!-- ********************************************************************** -->
